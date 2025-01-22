@@ -71,10 +71,10 @@
 // console.log(true < false);
 // console.log(false < true);
 
-// Не суворе рівенство (==)!!!!!!!!!!!!!!!!!
-// console.log(null > 0); //false
-// console.log(null == 0); //false
-// console.log(null >= 0); //true
+//!!!!! Не суворе рівенство (==)
+//!!!!! console.log(null > 0); //false
+//!!!!! console.log(null == 0); //false
+//!!!!! console.log(null >= 0); //true
 
 // console.log(undefined === null);
 
@@ -191,7 +191,6 @@
 // let sum = 0;
 
 // for (const char of str) {
-//   debugger;
 //   if (letters.includes(char)) {
 //     sum += 1;
 //   }
@@ -220,7 +219,7 @@
 
 // const str = "Привіт, як справи?";
 
-// console.log(str.split(" ").length);
+// console.log(String(str.split(" ").length));
 
 // ==================================================
 
@@ -256,7 +255,7 @@
 
 // ================================================================
 
-// const str = "Привіт";
+// const str = "трактор";
 
 // let newObj = {};
 
