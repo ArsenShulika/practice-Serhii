@@ -51,27 +51,27 @@
 // }
 // console.log(longestWord);
 
-function addNumbers(a, b) {
-  if (typeof a === "number" && typeof b === "number") {
-    return a + b;
-  }
-  return "someone not number";
-}
+// function addNumbers(a, b) {
+//   if (typeof a === "number" && typeof b === "number") {
+//     return a + b;
+//   }
+//   return "someone not number";
+// }
 
-console.log(addNumbers("t", 3));
+// console.log(addNumbers("t", 3));
 
 /*
 ? Напиши функцію min(a,b), яка повертає найменше з чисел a та b.
 ? Добав перевірку, що параметри це числа
 */
 
-function min(a, b) {
-  return typeof a === "number" && typeof b === "number"
-    ? Math.min(a, b)
-    : "not number";
-}
+// function min(a, b) {
+//   return typeof a === "number" && typeof b === "number"
+//     ? Math.min(a, b)
+//     : "not number";
+// }
 
-console.log(min(5, 3, 9));
+// console.log(min(5, 3, 9));
 
 // const str = "JavaScript це цікаво!";
 // let newStr = "";

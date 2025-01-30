@@ -1,3 +1,49 @@
+function countDigits(x) {
+  //   debugger;
+    const str = String(x).split("");
+    let sum = 0;
+    for (let i = 0; i < str.length; i += 1) {
+        sum +=1
+    }
+  console.log(str);
+}
+
+console.log(countDigits(21321));
+
+// function countDigits(x) {
+//   debugger;
+//   let sum = 0;
+//   for (let i = 1; i <= x; i += 1) {
+//     sum += 1 / (i * i);
+//   }
+//   return sum.toFixed(2);
+// }
+
+// console.log(countDigits(5));
+
+// function rangeSum1(x, y) {
+//   let res = 0;
+//   let sum = 0;
+//   for (let i = x; i <= y; i += 1) {
+//     sum += i;
+//     res += sum;
+//   }
+//   return res;
+// }
+
+// console.log(rangeSum1(0, 3));
+
+// function createString(x, y, step) {
+//   debugger;
+//   let num = [];
+//   for (let i = x; i <= y; i += step) {
+//     num.push(i);
+//   }
+//   return num.join(" ");
+// }
+
+// console.log(createString(0, 20, 5));
+
 // // Создать div
 // const divContainer = document.createElement("div");
 
