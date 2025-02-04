@@ -8,7 +8,7 @@
 //70 === 01:10
 //90 === 01:30
 
-// const hours = String(Number.parseInt(90 / 60)).padStart(2, 0);
+// const hours = String(parseInt(90 / 60)).padStart(2, 0);
 // console.log(hours);
 
 // const minutes = String(90 % 60).padStart(2, 0);
@@ -134,7 +134,7 @@
 
 // const str = "abcde";
 
-// if (str.startsWith("b")) {
+// if (str.startsWith("a")) {
 //   console.log("tak");
 // } else {
 //   console.log("no");
@@ -161,7 +161,7 @@
 //   console.log("fourth");
 // }
 
-// const fruits = ["🍎", "🍑", "🍇", "🍑", "🍌", "🍋", "🍑"];
+const fruits = ["🍎", "🍑", "🍇", "🍑", "🍌", "🍋", "🍑"];
 
 // for (let i = 0; i < fruits.length; i += 1) {
 //   console.log(fruits[fruits.length - 1 - i]);
@@ -171,11 +171,14 @@
 //   console.log(fruits[i]);
 // }
 
+// let reverseFruits = fruits.reverse();
+// console.log(reverseFruits);
+
 // for (const fruit of fruits) {
 //   console.log(fruit);
 // }
 
-// console.log(fruits.push("a")); повертае довжину масиву
+// console.log(fruits.push("a"));
 
 // =================================================================
 
@@ -183,6 +186,11 @@
 
 // const letters = "аеєиіїоуюя";
 
+// let sum = 0;
+// for (const char of str) {
+//   if (letters.includes(char)) sum += 1;
+// }
+// console.log(sum);
 // console.log(str.length);
 // console.log(str.toLowerCase());
 // console.log(str.toUpperCase());
@@ -208,12 +216,12 @@
 
 // ================================================
 
-// const str = "Привіт, як справи?";
+// const str = "Привіт, як справи ?";
 
 // const word = "справи";
 
 // console.log(str.includes(word));
-// console.log(str.indexOf(word));
+// console.log(str.split(" ").indexOf(word));
 
 // ===================================================================
 
@@ -225,7 +233,7 @@
 
 // const str = "Привіт";
 
-// console.log(str.split("").reverse().join(""));
+// console.log(str.split("").reverse().join("").toLowerCase());
 
 // ========================================================================
 
@@ -268,3 +276,71 @@
 // }
 
 // console.log(newObj);
+
+// ? Дано 90 хвилин, дізнайтесь скільки в даному числі міститься годин і хвилин.
+//   ? Результат виведіть у консоль.
+
+// function getHoursAndMinutes(getMinutes) {
+//   const days = String(parseInt(getMinutes / (24 * 60))).padStart(3, "0");
+//   const hours = String(parseInt((getMinutes % (24 * 60)) / 60)).padStart(
+//     2,
+//     "0"
+//   );
+//   const minutes = String(getMinutes % 60).padStart(2, "0");
+//   return `${days}-days ${hours}-hours ${minutes}-minutes`;
+// }
+
+// console.log(getHoursAndMinutes(200876));
+
+// ? Є рядок 'HTML, CSS, JS, PHP, React, Vue, Node.js, C, C++'.
+// ? Дізнайтеся, чи є в цьому рядку мова: 'JS'?.
+// ? Дізнайтесь позицію на якій перебуває цей підрядок
+
+// function getWord(str) {
+//   const subString = str.includes("JS");
+//   const wordPosition = str.split(", ").indexOf("JS");
+//   console.log(wordPosition);
+
+//   return subString;
+// }
+
+// console.log(getWord("HTML, CSS, JS, PHP, React, Vue, Node.js, C, C++"));
+
+//  ? Даний рядок'Vasyl Pupkin is 24 years old'.
+//  ? Скопіюйте з цього рядка окремо ім'я з прізвищем та окремо вік.
+
+// function copyNameSurnameAge(str) {
+//   const userName = str.slice(0, 5);
+//   const userSurname = str.slice(6, 12);
+//   const age = str.slice(16, 18);
+//   return `${userName} ${userSurname} ${age} years`;
+// }
+
+// console.log(copyNameSurnameAge("Vasyl Pupkin is 24 years old"));
+
+/*
+? Дано рядок, що складається із символів, наприклад, 'abcde'.
+? Перевірте, що першим символом цього рядка є буква 'a'.
+? Якщо це так - виведіть 'так', інакше виведіть 'ні'.
+*/
+
+// function getString(str) {
+//   if (str[0] === "a") {
+//     return "yes";
+//   }
+//   return "no";
+// }
+
+// console.log(getString("bbcde"));
+
+// const fruits = ["🍎", "🍑", "🍇", "🍑", "🍌", "🍋", "🍑"];
+
+// for (let i = 0; i < fruits.length; i += 1) {
+//   console.log(fruits[fruits.length - 1 - i]);
+// }
+
+// for (let i = fruits.length - 1; i >= 0; i -= 1) {
+//   console.log(fruits[i]);
+// }
+
+// console.log(fruits.reverse());

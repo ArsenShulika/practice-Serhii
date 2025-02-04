@@ -1,14 +1,41 @@
-function countDigits(x) {
-  //   debugger;
-    const str = String(x).split("");
-    let sum = 0;
-    for (let i = 0; i < str.length; i += 1) {
-        sum +=1
-    }
-  console.log(str);
-}
+// function backToFront(str, symbolsCount) {
+//   if (symbolsCount <= str.length) {
+//     const getSubstring = str.slice(str.length - symbolsCount, str.length);
+//     const newStr = getSubstring + str + getSubstring;
+//     return newStr;
+//   }
+//   return str;
+// }
 
-console.log(countDigits(21321));
+// console.log(backToFront("hello", 1)); // ohelloo
+// console.log(backToFront("abc", 3)); // abcabcabc
+// console.log(backToFront("world", 2)); // ldworldld
+// console.log(backToFront("world", 20)); // world
+
+// function removeDuplicate(arr) {
+//
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr.indexOf(arr[i]) === i) {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   return newArr;
+// }
+
+// console.log(removeDuplicate([1, 2, 3, 2, 3, 1, 1])); // [1,2,3]
+// console.log(removeDuplicate(["a", 1, "2", "b", 1, "2", "b"])); // ['a', 1, '2', 'b']
+
+// function countDigits(x) {
+//   const str = String(x).split("");
+//   let sum = 0;
+//   for (let i = 0; i < str.length; i += 1) {
+//     sum += 1;
+//   }
+//   console.log(sum);
+// }
+
+// console.log(countDigits(21321));
 
 // function countDigits(x) {
 //   debugger;
@@ -34,7 +61,6 @@ console.log(countDigits(21321));
 // console.log(rangeSum1(0, 3));
 
 // function createString(x, y, step) {
-//   debugger;
 //   let num = [];
 //   for (let i = x; i <= y; i += step) {
 //     num.push(i);
@@ -185,3 +211,272 @@ console.log(countDigits(21321));
 //   const currentButton = e.currentTarget;
 //   currentButton.closest(".autoCard").remove();
 // }
+
+/*
+? У нас є масив співробітників, відсортуйте його, щоб співробітники не повторювалися
+*/
+
+// const employees = [1, 2, 6, 8, 3, 2, 6, 7, 9, 6, 6, 6, 5, 6, 5];
+
+// const newArr = [];
+
+// for (let i = 0; i < employees.length; i += 1)
+//   if (employees.indexOf(employees[i]) === i) {
+//     newArr.push(employees[i]);
+//   }
+
+// console.log(newArr);
+
+/*
+
+? ЗАНЯТТЯ 3;
+
+
+? Напишіть функцію calcAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення.
+? За умови, що усі аругменти будуть лише числами.
+? Додай перевірку, що аргументами можуть бути не числа
+? Потрібно порахувати середнє значення аргументів (чисел)
+*/
+
+// function calcAverage(...rest) {
+//   console.log([...arguments]);
+//   let sum = 0;
+//   let count = 0;
+//   for (let i = 0; i < arguments.length; i += 1) {
+//     if (typeof arguments[i] === "number") {
+//       sum += arguments[i];
+//       count += 1;
+//     }
+//   }
+//   return sum / count;
+// }
+
+// console.log(calcAverage(10, 10, 40, "a"));
+
+// const film = {
+//   title: "Matrix",
+//   description:
+//     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, nemo iusto! Et doloribus praesentium laboriosam dolorem veritatis, magnam atque amet!",
+//   rating: 4,
+//   actors: ["Aiden", "Mason", "Jimmy"],
+//   isAdult: true,
+//   testFunction() {},
+// };
+
+// const filmTitle = "title";
+// console.log(film[filmTitle]);
+// console.log(film.title);
+// console.log(film["title"]);
+
+// коли ключ знаходиться в змінній, то ми до обєкта звертаємось через квадратні дужки;
+
+// const film2 = film;
+
+// console.log("film", film);
+// console.log("film2", film2);
+
+// film.title = "matrix2";
+
+// console.log("film", film);
+// console.log("film2", film2);
+
+// console.log(({} === {}));
+
+// console.log(Object.keys(film));
+
+// const arr = Object.keys(film);
+
+// for (const item of arr) {
+//   console.log(film[item]);
+// }
+
+// console.log(Object.values(film));
+
+// const arr = Object.entries(film);
+
+// console.log(Object.entries(film));
+
+// for (const [key, value] of arr) {
+//   console.log(key);
+//   console.log(value);
+
+//   console.log(`${key}:${value}`);
+// }
+
+// при диструктуризації з масиву вказуємо нові вигадані назви змінних, а в обєкті ті назви ключів які є в ньому
+
+// const { title, description, rating, actors, isAdult } = film;
+// console.log(title);
+// console.log(description);
+// console.log(rating);
+// console.log(isAdult);
+
+// const newFilm = Object.create(film);
+// console.log(newFilm);
+
+// const newFilm = Object.assign({}, film);
+// const newFilm = { ...film };
+
+// !копия обєкта, яка не копіює функції
+
+// const newFilm = JSON.parse(JSON.stringify(film));
+// film.title = "matrix2";
+// film.actors.push("mango");
+// console.log("newfilm", newFilm);
+// console.log("film", film);
+
+// !для копії обєкта краще використати biblioteku Loodash, deepclone;
+
+// const newFilm = structuredClone(film);
+// console.log(newFilm);
+
+const filmoteka = [
+  {
+    id: 1,
+    title: "Duna",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    rating: 10,
+    actors: [
+      "Amelia Gibson",
+      "Cameron Clayton",
+      "Viola Vasquez",
+      "Lula Collins",
+      "Victor Nichols",
+    ],
+    adult: false,
+    image: "https://via.placeholder.com/640/480",
+  },
+  {
+    id: 2,
+    title: "Venom",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    rating: 8,
+    actors: [
+      "Inez Greer",
+      "Barry Curtis",
+      "Blanche Rios",
+      "Glen Perry",
+      "Logan Powers",
+    ],
+    adult: true,
+    image: "https://via.placeholder.com/640/480",
+  },
+  {
+    id: 3,
+    title: "Luca",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    rating: 9,
+    actors: [
+      "Marguerite Gibbs",
+      "Lora Alvarez",
+      "Jorge Simpson",
+      "Thomas Hall",
+      "Darrell Hunter",
+    ],
+    adult: false,
+  },
+  {
+    id: 4,
+    title: "Free Guy",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    rating: 6,
+    actors: [
+      "Calvin Andrews",
+      "Mamie Myers",
+      "Madge Townsend",
+      "Ralph Kim",
+      "Jorge Reese",
+    ],
+    adult: false,
+    image: "https://via.placeholder.com/640/480",
+  },
+  {
+    id: 5,
+    title: "Saw",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    rating: 7,
+    actors: [
+      "Adele Marsh",
+      "Melvin Burgess",
+      "Jesus Reese",
+      "Harriet Moreno",
+      "Curtis Cox",
+    ],
+    adult: true,
+  },
+  {
+    id: 6,
+    title: "Duna 2",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    rating: 10,
+    actors: [
+      "Amelia Gibson",
+      "Cameron Clayton",
+      "Viola Vasquez",
+      "Lula Collins",
+      "Victor Nichols",
+    ],
+    adult: false,
+    image: "https://via.placeholder.com/640/480",
+  },
+];
+
+//? Напишіть функцію getAllTitlesOfFilms(films), яка повертає масив з усіма назвами фільмів.
+// function getAllTitlesOfFilms(films) {
+//   const arrOfFilms = [];
+//   for (const obj of films) {
+//     arrOfFilms.push(obj.title);
+//   }
+//   return arrOfFilms;
+// }
+
+// console.log(getAllTitlesOfFilms(filmoteka));
+
+//? Напишіть функцію findFilmByName(films, filmTitle), яка шукає фільм за назвою.
+
+// function findFilmByName(films, filmTitle) {
+//   let nameOfFilm = "";
+//   for (const obj of films) {
+//     if (obj.title === filmTitle) {
+//       nameOfFilm = obj;
+//     }
+//   }
+//   // if (nameOfFilm !== "") {
+//   //   return nameOfFilm;
+//   // }
+//   // return "is not found";
+//   return nameOfFilm ? nameOfFilm : "Is not found";
+// }
+
+// console.log(findFilmByName(filmoteka, "Duna 2"));
+
+//? Напишіть функцію findFilmByWord(films, filmTitle), яка шукає фільми які включають дане слово.
+
+// function findFilmByWord(films, filmTitle) {
+//   const arrOfFilms = [];
+//   for (const obj of films) {
+//     if (obj.title.includes(filmTitle)) {
+//       arrOfFilms.push(obj);
+//     }
+//   }
+//   return arrOfFilms.length !== 0 ? arrOfFilms : "Not Found";
+// }
+
+// console.log(findFilmByWord(filmoteka, "1"));
+
+// ? обчислення чисел Фібоначчі
+
+// function fibonacci(n) {
+//   let a = 0,
+//     b = 1,
+//     temp;
+
+//   for (let i = 0; i < n; i++) {
+//     temp = a;
+//     a = b;
+//     b = temp + b;
+//   }
+//   return a;
+// }
+
+// console.log(fibonacci(10));

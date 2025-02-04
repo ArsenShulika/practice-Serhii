@@ -26,9 +26,18 @@
 
 // console.log(filteredEmployees);
 
-/*Потрібно перевітири чи є речення палінром*/
+//?Потрібно перевітири чи є речення паліндром
 
-// const str = "Я несу гусеня!";
+// const str = "Я несу гусеня";
+// const str = "І була пані на палубІ";
+// const str = "Поліна неси Ром!";
+
+// const newStr = str.toLowerCase().replaceAll(" ", "");
+
+// const updateStr = [...newStr].reverse().join("");
+
+// console.log(newStr == updateStr);
+
 // янесугусеня
 // const str = 'Де помити мопед';
 // const str = 'І була пані на палубІ';
@@ -51,6 +60,11 @@
 // }
 // console.log(longestWord);
 
+/*
+? Напиши функцію min(a,b), яка повертає найменше з чисел a та b.
+? Добав перевірку, що параметри це числа
+*/
+
 // function addNumbers(a, b) {
 //   if (typeof a === "number" && typeof b === "number") {
 //     return a + b;
@@ -60,22 +74,18 @@
 
 // console.log(addNumbers("t", 3));
 
-/*
-? Напиши функцію min(a,b), яка повертає найменше з чисел a та b.
-? Добав перевірку, що параметри це числа
-*/
-
 // function min(a, b) {
-//   return typeof a === "number" && typeof b === "number"
-//     ? Math.min(a, b)
-//     : "not number";
+//   return typeof a === "number" && typeof b === "number" ? Math.min(a, b) : "not number";
 // }
 
 // console.log(min(5, 3, 9));
 
+//? Чи рядок є поліндромом?
+
 // const str = "JavaScript це цікаво!";
 // let newStr = "";
-// first method:
+
+//! first method:
 
 // for (let i = str.length - 1; i >= 0; i -= 1) {
 //   newStr += str[i];
@@ -83,14 +93,20 @@
 
 // console.log(newStr);
 
+//! second method:
+
 // newStr = str.split("").reverse().join("");
 // console.log(newStr);
+
+//! third method:
 
 // for (let i = 0; i < str.length; i += 1) {
 //   newStr += str[str.length - 1 - i];
 // }
 
 // console.log(newStr);
+
+// !!!!!
 
 // const arr = [];
 
@@ -108,8 +124,12 @@
 // }
 // console.log(total);
 
+// ?ПОРАХУЙ СУМУ ВСІХ ЗАРПЛАТ
+
 // const managerSalaries = [1000, 1500, 2500, 4000, 5000];
 // const developersSalaries = [8000, 40000, 15000];
+
+// !fitst method:
 
 // const newArr = [...managerSalaries, ...developersSalaries];
 
@@ -119,6 +139,19 @@
 //   total += newArr[i];
 // }
 // console.log(total);
+
+// !second method:
+
+// const newArr = [...managerSalaries, ...developersSalaries];
+
+// let total = 0;
+
+// for (const salary of newArr) {
+//   total += salary;
+// }
+// console.log(total);
+
+// !third method:
 
 // let total = 0;
 
@@ -131,11 +164,10 @@
 
 // console.log(total);
 
-// let newStr = "";
 // const str = "test";
+// let newStr = "";
 
 // for (let i = str.length - 1; i >= 0; i -= 1) {
-//   console.log(i);
 //   newStr += str[i];
 // }
 
@@ -149,7 +181,9 @@
 
 // console.log(newStr);
 
-// / const arr = [7, 5, "6", 18];
+// ?? Моя практика!!!!!!!!!!!!!!
+
+//  const arr = [7, 5, "6", 18];
 // const arr1 = ["3,5,6", 6];
 
 // console.log(addLastArrValue(arr));
@@ -365,3 +399,66 @@
 // используем оператор spread для копирования всех элементов первого и воторого массива в новый массив newComments:
 // !const newComments = [...comments, ...newArr];
 // !console.log(newComments);
+
+// ??Дано масив чисел. Відсортуйте його у порядку зростання.
+
+// const numbers = [5, 2, 2, 9, 1, 1, 7, 3];
+
+// let newArr = [];
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   if (numbers.indexOf(numbers[i]) === i) {
+//     newArr.push(numbers[i]);
+//   }
+// }
+
+// newArr.sort((a, b) => a - b);
+
+// console.log(newArr);
+
+// ??Є масив слів. Відсортуйте його за довжиною слова — від найкоротшого до найдовшого.
+
+// const words = ["apple", "banana", "kiwi", "grape", "strawberry"];
+
+// let newArr = [];
+
+// newArr = words.sort((a, b) => a.length - b.length);
+
+// console.log(newArr);
+
+// ?? Є масив об'єктів, що представляють людей. Відсортуйте їх за віком у порядку зростання.
+
+// const people = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 30 },
+//   { name: "Charlie", age: 20 },
+// ];
+
+// let newArr = [];
+
+// newArr = people.toSorted((a, b) => a.age - b.age);
+
+// console.log(newArr);
+
+// ??  Знайдіть усі слова-паліндроми.
+
+// Вхід: ["ротор", "потоп", "літак", "око", "вода"];
+// Вихід: ["ротор", "потоп", "око"];
+
+// const arr = ["ротор", "потоп", "літак", "око", "вода"];
+
+// let newArr = [];
+
+// for (let i = 0; i < arr.length; i += 1) {
+//   const index = arr[i].split("").reverse().join("");
+//   if (index === arr[i]) {
+//     newArr.push(arr[i]);
+//   }
+// }
+
+// console.log(newArr);
+
+// ?? Знайдіть найдовше слово - паліндром.
+
+Вхід: "Радар бачив рівень на воді";
+Вихід: "рівень";
