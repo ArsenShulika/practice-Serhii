@@ -161,11 +161,31 @@
 //   console.log("fourth");
 // }
 
-const fruits = ["🍎", "🍑", "🍇", "🍑", "🍌", "🍋", "🍑"];
+// const fruits = ["🍎", "🍑", "🍇", "🍑", "🍌", "🍋", "🍑"];
 
-// for (let i = 0; i < fruits.length; i += 1) {
-//   console.log(fruits[fruits.length - 1 - i]);
+// function getReverse(fruits) {
+//   let newArr = [];
+//   for (let i = 0; i < fruits.length; i += 1) {
+//     newArr.push(fruits[fruits.length - 1 - i]);
+//   }
+//   return newArr;
 // }
+
+// console.log(getReverse(fruits));
+
+// function getNewReverse(fruits) {
+//   let newArray = [];
+//   for (let i = fruits.length - 1; i >= 0; i -= 1) {
+//     newArray.push(fruits[i]);
+//   }
+//   return newArray;
+// }
+
+// function getNewReverse(fruits) {
+//   return fruits.reverse();
+// }
+
+// console.log(getNewReverse(fruits));
 
 // for (let i = fruits.length - 1; i >= 0; i -= 1) {
 //   console.log(fruits[i]);
@@ -273,6 +293,12 @@ const fruits = ["🍎", "🍑", "🍇", "🍑", "🍌", "🍋", "🍑"];
 //   } else {
 //     newObj[char] = 1;
 //   }
+// }
+
+// console.log(newObj);
+
+// for (const char of str) {
+//   newObj[char] = (newObj[char] || 0) + 1;
 // }
 
 // console.log(newObj);

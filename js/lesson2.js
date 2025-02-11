@@ -30,13 +30,15 @@
 
 // const str = "Я несу гусеня";
 // const str = "І була пані на палубІ";
-// const str = "Поліна неси Ром!";
+// // const str = "Поліна неси Ром!";
 
-// const newStr = str.toLowerCase().replaceAll(" ", "");
+// function isPalindrom(str) {
+//   const newStr = str.toLowerCase().replaceAll(" ", "");
+//   const updateStr = [...newStr].reverse().join("").toLowerCase();
+//   return newStr === updateStr ? "Is palilndrom" : "Is not palilndrom";
+// }
 
-// const updateStr = [...newStr].reverse().join("");
-
-// console.log(newStr == updateStr);
+// console.log(isPalindrom(str));
 
 // янесугусеня
 // const str = 'Де помити мопед';
@@ -420,9 +422,7 @@
 
 // const words = ["apple", "banana", "kiwi", "grape", "strawberry"];
 
-// let newArr = [];
-
-// newArr = words.sort((a, b) => a.length - b.length);
+// const newArr = words.sort((a, b) => a.length - b.length);
 
 // console.log(newArr);
 

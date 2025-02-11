@@ -227,31 +227,71 @@
 
 // console.log(newArr);
 
+// function countOccurrences(arr) {
+//   let count = {};
+//   arr.forEach((item) => {
+//     count[item] = (count[item] || 0) + 1;
+//   });
+//   return count;
+// }
+
+// for (const item of arr) {
+//   if (count[item]) {
+//     count[item] += 1;
+//   } else {
+//     count[item] = 1;
+//   }
+// }
+// return count;
+
+// console.log(countOccurrences([1, 2, 2, 3, 3, 3, 4]));
+
 /*
 
 ? ЗАНЯТТЯ 3;
+
 
 
 ? Напишіть функцію calcAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення.
 ? За умови, що усі аругменти будуть лише числами.
 ? Додай перевірку, що аргументами можуть бути не числа
 ? Потрібно порахувати середнє значення аргументів (чисел)
+
+
 */
 
+// function calcAverageStringLength(...rest) {
+//   let sumLength = 0;
+//   let count = 0;
+
+//   for (let i = 0; i < rest.length; i++) {
+//     if (typeof rest[i] === "string") {
+//       sumLength += rest[i].length;
+//       count += 1;
+//     }
+//   }
+
+//   return count === 0 ? 0 : sumLength / count;
+// }
+
+// console.log(calcAverageStringLength("hello", "world", 123, true)); // 5
+// console.log(calcAverageStringLength("a", "ab", "abc")); // 2
+// console.log(calcAverageStringLength(10, false)); // 0
+
 // function calcAverage(...rest) {
-//   console.log([...arguments]);
+//   console.log(rest);
 //   let sum = 0;
 //   let count = 0;
-//   for (let i = 0; i < arguments.length; i += 1) {
-//     if (typeof arguments[i] === "number") {
-//       sum += arguments[i];
+//   for (let i = 0; i < rest.length; i += 1) {
+//     if (typeof rest[i] === "number") {
+//       sum += rest[i];
 //       count += 1;
 //     }
 //   }
 //   return sum / count;
 // }
 
-// console.log(calcAverage(10, 10, 40, "a"));
+// console.log(calcAverage(10, 10, 50));
 
 // const film = {
 //   title: "Matrix",
@@ -283,6 +323,43 @@
 // console.log(({} === {}));
 
 // console.log(Object.keys(film));
+
+// const obj = { a: 1, b: 2, c: 3 };
+
+// let keys = Object.keys(obj);
+
+// console.log(keys);
+
+// const obj = { a: 10, b: "hello", c: 30, d: true };
+
+// function getKeys(obj) {
+//   let arr = [];
+//   let keys = Object.keys(obj);
+//   for (let key of keys) {
+//     if (typeof obj[key] === "number") {
+//       arr.push(key);
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(getKeys(obj));
+
+// const obj = { st: 1, longKey: 2, key: 3 };
+
+// function deleteKeys(obj) {
+//   let arr = [];
+//   const keys = Object.keys(obj);
+//   for (let key of keys) {
+//     if (key.length >= 3) {
+//       arr[key] = obj[key];
+//       console.log(arr[key]);
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(deleteKeys(obj));
 
 // const arr = Object.keys(film);
 
@@ -316,6 +393,21 @@
 
 // const newFilm = Object.assign({}, film);
 // const newFilm = { ...film };
+
+//? Object.create(): створює новий об'єкт із заданим прототипом.
+//? Object.assign(): створює новий об'єкт, копіюючи всі властивості (без зв'язку з прототипом).
+
+//? Відмінності:
+//? Object.create():
+//? Новий об'єкт успадковує властивості та методи від об'єкта-прототипу.
+//? Використовується для створення об'єктів із зв'язком прототипів.
+
+//? Object.assign():
+//? Створює "плоску" копію (глибокого копіювання не відбувається, тільки для верхнього рівня).
+//? Застосовується для клонування об'єктів або об'єднання їх властивостей.
+//? Коли що використовувати?
+//? Використовуйте Object.create(), якщо потрібна поведінка наслідування (прототипи).
+//? Використовуйте Object.assign(), якщо потрібна незалежна копія об'єкта.
 
 // !копия обєкта, яка не копіює функції
 
@@ -422,29 +514,29 @@ const filmoteka = [
 ];
 
 //? Напишіть функцію getAllTitlesOfFilms(films), яка повертає масив з усіма назвами фільмів.
-// function getAllTitlesOfFilms(films) {
-//   const arrOfFilms = [];
-//   for (const obj of films) {
-//     arrOfFilms.push(obj.title);
-//   }
-//   return arrOfFilms;
-// }
+function getAllTitlesOfFilms(films) {
+  const arrOfFilms = [];
+  for (const film of films) {
+    arrOfFilms.push(film.title);
+  }
+  return arrOfFilms;
+}
 
-// console.log(getAllTitlesOfFilms(filmoteka));
+console.log(getAllTitlesOfFilms(filmoteka));
 
 //? Напишіть функцію findFilmByName(films, filmTitle), яка шукає фільм за назвою.
 
 // function findFilmByName(films, filmTitle) {
 //   let nameOfFilm = "";
-//   for (const obj of films) {
-//     if (obj.title === filmTitle) {
-//       nameOfFilm = obj;
+//   for (const film of films) {
+//     if (film.title === filmTitle) {
+//       nameOfFilm = film;
 //     }
 //   }
-//   // if (nameOfFilm !== "") {
-//   //   return nameOfFilm;
-//   // }
-//   // return "is not found";
+//   //   // if (nameOfFilm !== "") {
+//   //   //   return nameOfFilm;
+//   //   // }
+//   //   // return "is not found";
 //   return nameOfFilm ? nameOfFilm : "Is not found";
 // }
 
