@@ -136,14 +136,14 @@ const vehicles = [
 //1.Реалізувати фільтер за властивістю amount і отримати
 //тільки назву моделі
 
-function getName(vehicles, amount) {
-  return vehicles
-    .filter((vehicle) => vehicle.amount >= amount)
-    .map((vehicle) => vehicle.model);
-  //   return vehicle.map((item) => item.model);
-}
+// function getName(vehicles, amount) {
+//   return vehicles
+//     .filter((vehicle) => vehicle.amount >= amount)
+//     .map((vehicle) => vehicle.model);
+//   //   return vehicle.map((item) => item.model);
+// }
 
-console.table(getName(vehicles, 12));
+// console.table(getName(vehicles, 12));
 
 //2.Отримати машини на розпродажі і сортувати за спаданням ціни
 
@@ -151,22 +151,21 @@ console.table(getName(vehicles, 12));
 //   return vehicles
 //     .filter((vehicle) => vehicle.onSale)
 //     .toSorted((a, b) => b.price - a.price);
-//   //   return vehicle.map((item) => item.model);
 // }
 
 // console.table(getName(vehicles));
 
-// function getName(vehicles) {
-//   return vehicles.reduce((acc, car) => {
-//     if (acc[car.type]) {
-//       acc[car.type] += 1;
-//     } else {
-//       acc[car.type] = 1;
-//     }
+function getName(vehicles) {
+  return vehicles.reduce((acc, car) => {
+    if (acc[car.type]) {
+      acc[car.type] += 1;
+    } else {
+      acc[car.type] = 1;
+    }
 
-//     return acc;
-//   }, {});
-// }
+    return acc;
+  }, {});
+}
 
 // console.table(getName(vehicles));
 
@@ -220,25 +219,24 @@ const courses = [
   },
 ];
 
-//6. Зібрати в allTopics масив усіх предметів усіх курсів
-//Виконати фільтрацію, залишивши в uniqueTopics тільки унікальні елементи
+// 6. Зібрати в allTopics масив усіх предметів усіх курсів
+// Виконати фільтрацію, залишивши в uniqueTopics тільки унікальні елементи
 
 function getAllTopics(courses) {
-  //   return courses
-  //     .reduce((acc, topic) => {
-  //       return [...acc, ...topic.topics];
-  //     }, [])
-  //     .filter((item, index, array) => array.indexOf(item) === index);
+  // return courses
+  //   .reduce((acc, course) => {
+  //     return [...acc, ...course.topics];
+  //   }, [])
+  //   .filter((item, index, array) => array.indexOf(item) === index);
 
-  return courses
-    .flatMap((course) => course.topics)
-    .reduce((acc, topic) => {
-      if (acc.includes(topic)) {
-        return acc;
-      }
-      acc.push(topic);
-      return acc;
-    }, []);
+  return courses.flatMap((course) => course.topics);
+  // .reduce((acc, topic) => {
+  //   if (acc.includes(topic)) {
+  //     return acc;
+  //   }
+  //   acc.push(topic);
+  //   return acc;
+  // }, []);
 }
 
 console.log(getAllTopics(courses));
