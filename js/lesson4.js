@@ -155,17 +155,17 @@ const vehicles = [
 
 // console.table(getName(vehicles));
 
-function getName(vehicles) {
-  return vehicles.reduce((acc, car) => {
-    if (acc[car.type]) {
-      acc[car.type] += 1;
-    } else {
-      acc[car.type] = 1;
-    }
+// function getName(vehicles) {
+//   return vehicles.reduce((acc, car) => {
+//     if (acc[car.type]) {
+//       acc[car.type] += 1;
+//     } else {
+//       acc[car.type] = 1;
+//     }
 
-    return acc;
-  }, {});
-}
+//     return acc;
+//   }, {});
+// }
 
 // console.table(getName(vehicles));
 
